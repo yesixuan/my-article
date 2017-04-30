@@ -12,8 +12,6 @@ tags:
 ## 首先贴出两个网址
 [hexo的使用教程](http://www.jianshu.com/p/465830080ea9)
 [nextT主题的替换教程](http://www.tuicool.com/articles/zeIZJzv)
-
-
 <!-- more -->
 <br>
 ## 下面总结下我自己的填坑经历

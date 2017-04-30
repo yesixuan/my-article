@@ -8,8 +8,8 @@ tags:
 - Interview
 - 面试
 ---
-本文转载 (博客：http://segmentfault.com/u/trigkit4) 收集整理。
-
+> 本文转载 (博客：http://segmentfault.com/u/trigkit4) 收集整理。
+<!-- more -->
 #### 一些开放性题目
 
     1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
@@ -23,7 +23,6 @@ tags:
     5.未来三到五年的规划是怎样的？
 
 <br>
-<!-- more -->
 
 
 #### position的值， relative和absolute分别是相对于谁进行定位的？
