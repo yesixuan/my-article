@@ -1,5 +1,5 @@
 ---
-title: JS gleaning
+title: JS 拾遗（二）
 tags: ["JS 拾遗","js"]
 date: 2017-04-25 09:34:42
 categories:

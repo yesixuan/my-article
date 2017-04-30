@@ -1,5 +1,5 @@
 ---
-title: Front-end-Interview
+title: 前端面试
 date: 2017-04-20 13:49:19
 categories:
 - 前端
@@ -10,6 +10,7 @@ tags:
 ---
 > 本文转载 (博客：http://segmentfault.com/u/trigkit4) 收集整理。
 <!-- more -->
+
 #### 一些开放性题目
 
     1.自我介绍：除了基本个人信息以外，面试官更想听的是你与众不同的地方和你的优势。
