@@ -8,6 +8,7 @@ categories:
 - atom
 ---
 > Atom是github出品的开源编辑器。虽然及不上sublime轻量，但是根据我的个人使用体验来说，sublime要想用得顺手，你还得装大量的插件，目前我用得sublime装上插件后的体积已经跟atom差不多了，而且sublime现在已经很卡了，所以...
+
 <!-- more -->
 
 ### Atom插件被墙的解决方案
