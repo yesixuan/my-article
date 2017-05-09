@@ -12,9 +12,9 @@ categories:
 
 ### state
 #### what?
-state是整个应用的数据中心，管理整个应用的状态。也称为状态对象
+state是整个应用的数据中心，管理整个应用的状态。也称为状态对象。
 #### 定义
-一般是定义在store/index.js中，就是一个大的对象（或者单独来一个state.js引进来）。
+一般是定义在`store/index.js`中，就是一个大的对象（或者单独来一个`state.js`引进来）。
 ```JS
   const state = {
     count: 0,
@@ -25,7 +25,7 @@ state是整个应用的数据中心，管理整个应用的状态。也称为状
   })
 ```
 #### 使用
-* 直接在组件模板里：{{$store.state.count}}
+* 直接在组件模板里：`{{$store.state.count}}`。
 * 在计算属性里面使用：
 ```JS
   computed: {
@@ -44,9 +44,9 @@ state是整个应用的数据中心，管理整个应用的状态。也称为状
 ```
 ### mutations
 #### what?
-我把它理解为直接操作状态对象的操作中心
+我把它理解为直接操作状态对象的操作中心。
 #### 定义
-一般是定义在store/mutations.js中,里面暴露了多个函数来改变状态对象
+一般是定义在`store/mutations.js`中,里面暴露了多个函数来改变状态对象。
 ```JS
   export const increment = state => {
     state.count++
@@ -63,9 +63,9 @@ state是整个应用的数据中心，管理整个应用的状态。也称为状
 ```
 ### getters
 #### what?
-getter可以看作是state的计算属性，即通过状态对象衍生出来的数据。从它的名字为getter可以看出,通过读取state得到衍生值
+`getter`可以看作是`state`的计算属性，即通过状态对象衍生出来的数据。从它的名字为`getter`可以看出,通过读取`state`得到衍生值。
 #### 定义
-一般是定义在store/getters.js中,里面暴露了许多值，这些值都是通过函数返回值赋值（通过这种方式可以避免在组件内直接使用mapState这种局限性较大方式）
+一般是定义在`store/getters.js`中,里面暴露了许多值，这些值都是通过函数返回值赋值（通过这种方式可以避免在组件内直接使用`mapState`这种局限性较大方式）。
 ```JS
   export const count = state => state.count
 ```
@@ -79,9 +79,9 @@ getter可以看作是state的计算属性，即通过状态对象衍生出来的
 ```
 ### actions
 #### what?
-action用来派发mutation,一个action中可以触发多个mutation，在不同的时间不同的条件下触发不同的mutation（异步操作在此处执行）
+`action`用来派发`mutation`，一个`action`中可以触发多个`mutation`，在不同的时间不同的条件下触发不同的`mutation`（异步操作在此处执行）。
 #### 定义
-一般是定义在store/actions.js中,里面暴露了很多方法。方法里面触发mutation（函数默认的第一个参数是context，下例使用了对象的结构）
+一般是定义在`store/actions.js`中,里面暴露了很多方法。方法里面触发`mutation`（函数默认的第一个参数是`context`，下例使用了对象的结构）。
 ```JS
   export const incrementIfOdd = ({ commit, state }) => {
     if ((state.count + 1) % 2 === 0) {
@@ -106,7 +106,7 @@ action用来派发mutation,一个action中可以触发多个mutation，在不同
 ```
 ### module
 #### what?
-用来将上述种种进行模块化
+用来将上述种种进行模块化。
 #### 定义
 ```JS
   const moduleA = {
@@ -122,4 +122,4 @@ action用来派发mutation,一个action中可以触发多个mutation，在不同
   })
 ```
 #### 使用
-实际上就是在state后面多加了一层moduleA（我们那些可爱的映射函数都没法用了）
+实际上就是在state后面多加了一层moduleA（我们那些可爱的映射函数都没法用了）。
