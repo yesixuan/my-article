@@ -80,6 +80,8 @@ react里面的`props`是只读的，由父组件传给子组件。子组件通�
     this.setState({value: event.target.value});
   }
 ```
+#### 表单默认值
+使用`defaultValue`和`defaultChecked`代替`value`和`checked`。
 #### 处理多个表单元素
 ```JS
   handleInputChange(event) {

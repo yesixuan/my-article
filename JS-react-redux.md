@@ -86,6 +86,7 @@ Action Creator的写法如下：
 redux-thunk中间件的用法：①在创建store的时候传入`applyMiddleware(thunk)`-->②派发动作`store.dispatch(fetchPosts('reactjs'))`（dispatch之后还可以继续`.then()`）
 #### redux-promise中间件
 redux-promise中间件使dispatch支持promise对象作为参数。
+
 Action Creator的写法一：
 ```JS
 const fetchPosts = (dispatch, postTitle) => new Promise(function (resolve, reject) {
