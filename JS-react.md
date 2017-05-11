@@ -45,6 +45,11 @@ JSX语法支持html与js混着写。遇见`<`解析为html，遇见`{`解析为j
 ```
 #### 组件类的`props`
 react里面的`props`是只读的，由父组件传给子组件。子组件通过`this.props.xx`来得到`props`。
+初始化默认的`props`：
+```JS
+  // 这个写在组件类的外面
+  组件类名.defaultProps = { initialCount: 0 };
+```
 #### 组件类的`state`
 修改state要用`this.setState({comment: 'Hello'});`（这种方式会自动触发视图渲染）。
 #### 组件类的构造函数
@@ -60,7 +65,10 @@ react里面的`props`是只读的，由父组件传给子组件。子组件通�
 - 两种特殊状态的处理函数`componentWillReceiveProps(object nextProps)`（已加载组件收到新的参数时调用）；`shouldComponentUpdate(object nextProps, object nextState)`（组件判断是否重新渲染时调用）。
 
 ### 事件处理
-在ES6写法的组件类中，方法的绑定需要用`bind()`方法绑定`this`。
+- 在ES6写法的组件类中，方法的绑定需要用`bind()`方法绑定`this`。
+- 给事件处理函数传递额外参数的方式：`bind(this, arg1, arg2, ...)`。
+- 使用原生事件的时候注意在`componentWillUnmount`解除绑定 `removeEventListener`。
+
 ### 渲染列表
 #### 善用数组的`map()`方法
 ```JS

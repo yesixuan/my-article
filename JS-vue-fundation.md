@@ -208,3 +208,27 @@ Vue 实例暴露了一些有用的实例属性与方法。这些属性与方法�
 ```
 #### keep-alive
 如果把切换出去的组件保留在内存中，可以保留它的状态或避免重新渲染。为此可以添加一个 keep-alive 指令参数。
+#### 作用域插槽
+```HTML
+<!-- 子组件 -->
+<div class="child">
+  <slot text="hello from child"></slot>
+</div>
+<!-- 父组件 -->
+<div class="parent">
+  <child>
+    <!-- 这个props可以接收子组件的prop对象 -->
+    <template scope="props">
+      <span>hello from parent</span>
+      <span>{{ props.text }}</span>
+    </template>
+  </child>
+</div>
+<!-- 渲染之后得到 -->
+<div class="parent">
+  <div class="child">
+    <span>hello from parent</span>
+    <span>hello from child</span>
+  </div>
+</div>
+```
