@@ -12,9 +12,7 @@ categories:
 <!-- more -->
 ### 基本概念
 采用Flex布局的元素，称为Flex容器（flex container），简称”容器”。它的所有子元素自动成为容器成员，称为Flex项目（flex item），简称”项目”。
-<div align="center">
 ![基本概念图](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgZgf6JhicNWZA6MQZoDot2eNvXJjfCJrXVz95nsv909LY6Zw8UdjI24g/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
-</div>
 容器默认存在两根轴：水平的主轴（main axis）和垂直的交叉轴（cross axis）。主轴的开始位置（与边框的交叉点）叫做main start，结束位置叫做main end；交叉轴的开始位置叫做cross start，结束位置叫做cross end。
 ### 指定容器为Flex布局
 ```CSS
@@ -34,9 +32,7 @@ flex-direction属性决定主轴的方向（即项目的排列方向）。
     flex-direction: column-reverse | column | row | row-reverse;
   }
 ```
-<div align="center">
 ![flex-direction属性](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgr79qBwJlcJP5g1ojric6d74HFibWGRWcpuO0ycPXOnstHdIPnx75OodA/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
-</div>
 #### flex-wrap属性
 默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行。
 ```CSS
@@ -53,9 +49,7 @@ justify-content属性定义了项目在主轴上的对齐方式。
     justify-content: flex-start(默认) | flex-end | center | space-between | space-around;
   }
 ```
-<div align="center">
 ![justify-content属性](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgWgibPpIahp2micKibiaAbJRDpMQRuQoAI7sjuDYubWsX9tj3CyKyH46ejw/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
-</div>
 #### align-items属性
 align-items属性定义项目在交叉轴上如何对齐。
 ```CSS
@@ -63,9 +57,7 @@ align-items属性定义项目在交叉轴上如何对齐。
     align-items: flex-start(默认) | flex-end | center | baseline | stretch;
   }
 ```
-<div align="center">
 [](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgIIkHnLoWhXmV1l2AWJIAgo81t5mGAbicyg8ibRVRso6j8PDjCD91L3yQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
-</div>
 #### align-content属性(没搞太明白)
 align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
 ```CSS
@@ -113,6 +105,4 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
     align-self: auto | flex-start | flex-end | center | baseline | stretch;
   }
 ```
-<div align="center">
 ![align-self属性](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgibEKHCULaFNxmos63ichpsdCnavoCr49h1qIk7clz22Ev7TjFE5syib6g/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
-</div>
