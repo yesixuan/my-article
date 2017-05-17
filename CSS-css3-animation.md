@@ -47,6 +47,7 @@ categories:
 #### 定义和用法
 ```CSS
   /* 这里使用的是简写属性 */
+  /* 多个属性要写的话，用逗号隔开 */
   transition: property duration timing-function delay;
 ```
 ### animate.css
