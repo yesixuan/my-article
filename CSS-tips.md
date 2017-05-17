@@ -13,8 +13,8 @@ categories:
 ### 使用:not()去除导航上不需要的边框
 ```CSS
   /* 只保留导航列表最后一项的右边框 */
-  .nav li:last-child {
-     border-right: none;
+  .nav li:not(:last-child) {
+     border-right: 1px solid #666;
    }
 ```
 ### 为body添加行高
