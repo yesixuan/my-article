@@ -7,7 +7,7 @@ categories:
 - CSS
 - skill
 ---
-> 一些CSS的小技巧往往能够发挥出巨大的能量。本文转载至[前端开发者应该知道的 CSS 小技巧](http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=402270468&idx=1&sn=d3d25897a6135f764b3fd5bc764fbc77&scene=21#wechat_redirect)...
+> 一些CSS的小技巧往往能够发挥出巨大的能量。本文转载至[前端开发者应该知道的CSS小技巧](http://mp.weixin.qq.com/s?__biz=MzAxODE2MjM1MA==&mid=402270468&idx=1&sn=d3d25897a6135f764b3fd5bc764fbc77&scene=21#wechat_redirect)...
 
 <!-- more -->
 ### 使用:not()去除导航上不需要的边框
