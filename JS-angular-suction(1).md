@@ -90,6 +90,7 @@ categories:
   <img [src]="动态值" alt="">
   <!-- 当布尔值为真的时候，active的class才会被添加，而且之前的container不会被覆盖 -->
 	<div class="container" [class.active]="布尔值"></div>
+  <!-- 使用[class]会覆盖之前的类，使用[ngClass]="{类名: 表达式（返回布尔值）}"不会覆盖之前的类。（样式绑定与其相似） -->
 ```
 ### 循环语法
 ```html

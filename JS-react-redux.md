@@ -187,67 +187,67 @@ export const USERINFO_UPDATE = "USERINFO_UPDATE"; // 后面还有许多
 ```
 #### 定义action生成函数
 ```JS
-// app/actions/userinfo.js
-import * as userTypes from '../constants/userinfo'
-export function update(data){
-	return {
-		type:userTypes.USERINFO_UPDATE,
-		data
-	}
-}
+  // app/actions/userinfo.js
+  import * as userTypes from '../constants/userinfo'
+  export function update(data){
+  	return {
+  		type:userTypes.USERINFO_UPDATE,
+  		data
+  	}
+  }
 ```
 #### 定义reducers
 ```JS
-// app/reducers/userinfo.js
-import * as userTypes from '../constants/userinfo'
-export default function userinfo(state={},action){
-	switch(action.type) {
-		case userTypes.USERINFO_UPDATE:
-				return action.data;
-		default:
-			return state;
-	}
-}
+  // app/reducers/userinfo.js
+  import * as userTypes from '../constants/userinfo'
+  export default function userinfo(state={},action){
+  	switch(action.type) {
+  		case userTypes.USERINFO_UPDATE:
+  				return action.data;
+  		default:
+  			return state;
+  	}
+  }
 ```
 #### 生成store
 ```JS
-// app/store/configureStore.js
-import { createStore } from 'redux'
-import rootReducer from '../reducers'
+  // app/store/configureStore.js
+  import { createStore } from 'redux'
+  import rootReducer from '../reducers'
 
-export default function configureStore(initialState){
-	const store = createStore(rootReducer,initialState,
-    // 目测这里是用来配合浏览器的redux开发者工具的
-		window.devToolsExtension ? window.devToolsExtension() : undefined
-	)
-	return store
-}
+  export default function configureStore(initialState){
+  	const store = createStore(rootReducer,initialState,
+      // 目测这里是用来配合浏览器的redux开发者工具的
+  		window.devToolsExtension ? window.devToolsExtension() : undefined
+  	)
+  	return store
+  }
 ```
 #### 配合react-redux
 ```JS
-// app/appContainer.jsx，导入action生成函数
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import * as userInfoActionsFromOtherFiles from './actions/userinfo.js' // 在这个根组件中，只需要拿到action生成函数就好了
-// 调用redux中的action生成函数
-componentDidMount(){
-  this.props.userInfoActions.update({
-    cityName:cityName
-  })
-}
-// 将action生成函数与redux里的state数据映射到组件的props上
-function mapStateToProps(state){
-	return {
-    ...
-	}
-}
-function mapDispatchToProps(dispatch){
-	return {
-		userInfoActions:bindActionCreators(userInfoActionsFromOtherFiles,dispatch)
-	}
-}
-export default connect(
-	mapStateToProps,
-	mapDispatchToProps
-)(AppContainer)
+  // app/appContainer.jsx，导入action生成函数
+  import { bindActionCreators } from 'redux'
+  import { connect } from 'react-redux'
+  import * as userInfoActionsFromOtherFiles from './actions/userinfo.js' // 在这个根组件中，只需要拿到action生成函数就好了
+  // 调用redux中的action生成函数
+  componentDidMount(){
+    this.props.userInfoActions.update({
+      cityName:cityName
+    })
+  }
+  // 将action生成函数与redux里的state数据映射到组件的props上
+  function mapStateToProps(state){
+  	return {
+      ...
+  	}
+  }
+  function mapDispatchToProps(dispatch){
+  	return {
+  		userInfoActions:bindActionCreators(userInfoActionsFromOtherFiles,dispatch)
+  	}
+  }
+  export default connect(
+  	mapStateToProps,
+  	mapDispatchToProps
+  )(AppContainer)
 ```
