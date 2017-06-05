@@ -54,6 +54,6 @@ webpack内部其实是启动了一个基于express的小型服务器。而expres
 至此，我们开发之前都要敲两个命令来分别启动项目和我们写的接口，还可以更加简单
 ```JS
   /* build/dev-server.js */
-  将这个express服务器跑起来
+  // 将这个express服务器跑起来
   require('../mock/server.js');
 ```
