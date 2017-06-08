@@ -142,6 +142,12 @@ sort()加filter()
     });
   }
 ```
+ES6的Set以及Array.from方法
+```js
+  function unique(arr) {
+    return Array.from(new Set(arr));
+  }
+```
 ### 数组判断
 ```js
   // 自带的isArray方法
