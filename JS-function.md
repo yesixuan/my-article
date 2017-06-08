@@ -1,7 +1,7 @@
 ---
 title: JS中函数的生命周期
 tags: ["JS"]
-date: 2017-05-17J8 11:20:00
+date: 2017-05-17 11:20:00
 categories:
 - 前端
 - JS
