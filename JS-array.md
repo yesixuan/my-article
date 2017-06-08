@@ -122,16 +122,25 @@ filter():
 ```
 hash方法
 ```js
-function unique(arr) {
-  var hash = {},result = []
-  arr.forEach((item) => {
-    if(!hash[item]) {
-      hash[item] = 1
-      result.push(item)
-    }
-  })
-  return result
-}
+  function unique(arr) {
+    var hash = {},result = []
+    arr.forEach((item) => {
+      if(!hash[item]) {
+        hash[item] = 1
+        result.push(item)
+      }
+    })
+    return result
+  }
+```
+sort()加filter()
+```js
+  function unique(arr) {
+    // arr.concat()得到新的数组
+    return arr.concat().sort().filter(function(item, index, arr) {
+      return !index || item != arr[index - 1];
+    });
+  }
 ```
 ### 数组判断
 ```js
