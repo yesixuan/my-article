@@ -3,9 +3,8 @@ title: 常用git命令
 tags: ["git"]
 date: 2017-04-22 08:02:18
 categories:
-- 杂项
+- 工具
 - git
-- git常用命令
 ---
 > 听说git可能是目前世界上最好的代码管理工具，下面整理下我迄今为止用到的git命令。不全，但极为实用...
 
@@ -58,6 +57,33 @@ categories:
   ```bash
     git pull origin master
   ```
+
+### 分支操作
+- 创建并且切换到该分支
+```bash
+  git checkout -b [branch-name]
+```
+
+- 切换至主分支
+```bash
+  git checkout master
+```
+
+- 删除某分支
+```bash
+  git branch -d [branch-name]
+```
+
+- 提交分支到远程仓库
+```bash
+  git push -u origin [branch-name]
+```
+
+- 合并分支
+```bash
+  // 一旦出现冲突，需要手动解决冲突。解决完后，还要add一下
+  git merge [branch-name]
+```
 
 ### 其他重要的git命令
 - 查看本地仓储的状态
