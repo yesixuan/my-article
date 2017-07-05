@@ -79,6 +79,11 @@ categories:
   git push -u origin [branch-name]
 ```
 
+- 删除远程分支
+```bash
+  git push origin --delete [branch-name]
+```
+
 - 合并分支
 ```bash
   // 一旦出现冲突，需要手动解决冲突。解决完后，还要add一下

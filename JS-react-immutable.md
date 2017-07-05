@@ -7,7 +7,7 @@ categories:
 - JS
 - react
 ---
-> 江湖传言，immutable-js能够对react应用的性能提升良多。那么就下来就是填坑经历了[参考](https://github.com/chvin/react-tetris/tree/master/src)...
+> 江湖传言，immutable-js能够对react应用的性能提升良多。那么就下来就是填坑经历了[参考](https://github.com/chvin/react-tetris/tree/master/src)  [官方文档](https://github.com/reactjs/redux/blob/master/docs/recipes/UsingImmutableJS.md)...
 
 <!-- more -->
 ## 为什么使用immutable
