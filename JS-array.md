@@ -133,6 +133,20 @@ hash方法
     return result
   }
 ```
+splice()
+```js
+  /* 两层循环 */
+  function unique(arr) {
+    arr.forEach((item, index) => {
+      for(let i += index; i < arr.length; i++) {
+        if(item === arr[i]) {
+          arr.splice(i--, 1)
+        }
+      }
+    })
+    return arr
+  }
+```
 sort()加filter()
 ```js
   function unique(arr) {
