@@ -10,7 +10,7 @@ categories:
 
 <!-- more -->
 ## 概况
-Rxjs是响应式编程思想在JS中的一种实现。那么Rxjs到底是个什么东西呢？装逼地讲，Pxjs是一种融合了函数式编程、观察者模式的以操作`流`为核心的一种编程思想。
+Rxjs是响应式编程思想在JS中的一种实现。那么Rxjs到底是个什么东西呢？装逼地讲，Rxjs是一种融合了函数式编程、观察者模式的以操作`流`为核心的一种编程思想。
 Rxjs的适用场景为异步数据流。针对异步的处理是采用观察者模式。针对数据流，我们使用函数式编程中的状态集中管理的理念。
 简单说说对面向对象编程与函数式编程的理解吧：
 面向对象就是对数据的封装，将具有相关性的数据和方法封装到一个个对象中，以便管理；
@@ -20,7 +20,7 @@ Rxjs的适用场景为异步数据流。针对异步的处理是采用观察者�
 ### Observable
 Observable是事件流的源，相当于观察者模式中的被观察者。可以发射一个个的事件、数据等流。
 ### Operator
-Operator是Observable的操作符。体现了函数式编程和迭代qi模式的思想。通过各种转变，将Observable流转变为新的Observable流。
+Operator是Observable的操作符。体现了函数式编程和迭代器模式的思想。通过各种转变，将Observable流转变为新的Observable流。
 ### Observer
 对Observable对象发出的每个事件进行响应。
 ### subscribe()
@@ -80,30 +80,33 @@ Observable.create()：
 #### concatMap组合操作符
 某次数据请求依赖前一次请求的结果
 ```js
-let getFirstDatas = Rx.Observable.create(observer => {
-  // next可以执行一个异步操作，也可以在异步操作后next出异步操作的结果
-  observer.next(getFirstData())
-  observer.complete()
-})
-let createSecondDatas = function(firstData) {
-  return Rx.Observable.create(observer => {
-    getSecondData(firstData, secondData) => {
-      observer.next(secondData)
-      observer.complete()
-    }
+  let getFirstDatas = Rx.Observable.create(observer => {
+    // next可以执行一个异步操作，也可以在异步操作后next出异步操作的结果
+    observer.next(getFirstData())
+    observer.complete()
   })
-}
-getFirstDatas.concatMap(fristData => {
-  return createSecondDatas(firstData)
-}).subscribe(secondData => {
-  doSomething(secondData)
-})
+  let createSecondDatas = function(firstData) {
+    return Rx.Observable.create(observer => {
+      getSecondData(firstData, secondData) => {
+        observer.next(secondData)
+        observer.complete()
+      }
+    })
+  }
+  getFirstDatas.concatMap(fristData => {
+    return createSecondDatas(firstData)
+  }).subscribe(secondData => {
+    doSomething(secondData)
+  })
 ```
 #### 工具操作符
 - timeout(): 超过指定的时间没有拿到数据就抛出异常
 - debounceTime(): 防止抖动
 - switchMap(): 保证前端拿到的数据是有序的
 ```js
-// ...
-.switchMap(event => getRecommend(event.target.value))
+  // ...
+  .switchMap(event => getRecommend(event.target.value))
 ```
+
+## 参考文档
+[RxJS中文文档](http://cn.rx.js.org/)
