@@ -6,7 +6,8 @@ categories:
 - 后台
 - 数据库
 ---
-> 曾经听说过这样一个说法：jQuery之于JS就好似express之于nodejs。如此这般，大家应该知道express的江湖地位了...   
+> 曾经听说过这样一个说法：jQuery之于JS就好似express之于nodejs。如此这般，大家应该知道express的江湖地位了...  
+ 
 <!-- more -->
 
 ## 准备工作

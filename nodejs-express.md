@@ -7,6 +7,7 @@ categories:
 - nodejs
 ---
 > 曾经听说过这样一个说法：jQuery之于JS就好似express之于nodejs。如此这般，大家应该知道express的江湖地位了...  
+
 <!-- more -->
 
 在我看来，express最亮眼的便是它的中间件。通过各种中间件，我们对服务中最重要的两个参数`req`、`res`进行加工，加工过后的`req`、`res`就有我们经常需要用到的数据以及更加好用的方法。
