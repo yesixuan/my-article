@@ -104,3 +104,36 @@ module.exports = {
 }
 ```
 - 简化正则表达式(当项目只有js文件是就不要写成/\.jsx?$/)
+- 只对项目目录下的代码进行babel编译
+```js
+{
+  test: /\.js$/,
+  loader: 'babel-loader',
+  include: path.resolve(__dirname,'src')
+}
+```
+### 开启babel-loader缓存
+babel编译过程很耗时，好在babel-loader提供缓存编译结果选项，在重启webpack时，不需要重新编译而是复用缓存结果。打开babel-loader缓存配置如下：
+```js
+module.exports = {
+  module: {
+    loaders: [{
+      test: /.js$/,
+      loader: 'babel-loader?cacheDirectory',
+    }]
+  }
+}
+```
+### 使用noParse
+module.noParse可以配置哪些文件脱离webpack的解析（如jquery等）。  
+```js
+module.exports = {
+  module: {
+    noParse: /node_modules\/(jquery|chart)\.js/
+  }
+}
+```
+
+## 其他
+- happypack
+- DllPlugin  
