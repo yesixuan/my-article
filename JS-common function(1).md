@@ -1,6 +1,6 @@
 ---
-title: JS观察者模式
-tags: ["js","设计模式"]
+title: JS常用方法（一）
+tags: ["js","常用方法"]
 date: 2017-07-11 09:52:00
 categories:
 - 前端
