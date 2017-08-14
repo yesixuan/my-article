@@ -8,7 +8,7 @@ categories:
 - 基础
 password: false
 ---
-> ...
+> 有了IO流，我们才拥有了对硬盘上的文件进行读写的功能。当然，这只是一个开始...
 
 <!-- more -->
 ## File类
