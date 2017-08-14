@@ -109,7 +109,7 @@ categories:
 - 恢复到之前的某个版本
   ```bash
     // 哈希值可以在log中看
-    git reset --hash 哈希值的前六位
+    git reset --hard 哈希值的前六位
   ```
 
 - 下载远程仓储的所有变动
