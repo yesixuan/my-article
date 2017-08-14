@@ -39,8 +39,9 @@ Observable.fromEvent()：
   let button = document.querySelector('button')
   Rx.Observable.fromEvent(button, 'click') // 返回一个Observable对象
   .subscribe(() => console.log('Clicked!'))
-```  
-Observable.create()：
+```   
+
+Observable.create()：  
 ```js
   Rx.Observable.create(observer => {
     getData(data => {

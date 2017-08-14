@@ -77,10 +77,3 @@ categories:
   }
 ```
 6. 准备工作做完，开始执行函数，随着函数的执行，修改AO的属性值。
-
-<script>
-  if("1110"!==prompt("请输入文章密码！")){
-    alert("密码错误，回到首页");
-    window.history.back();
-  }
-</script>

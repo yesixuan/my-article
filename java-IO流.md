@@ -6,7 +6,6 @@ categories:
 - 后端
 - java
 - 基础
-password: false
 ---
 > 有了IO流，我们才拥有了对硬盘上的文件进行读写的功能。当然，这只是一个开始...
 
@@ -116,7 +115,7 @@ public static viod listAllFilesAndDirs(String path) {
 上面我们已经知道File对象封装的是文件或者路径属性，但是不包含向（从）文件读（写）数据的方法，此时就该是IO流粉墨登场的时候了。  
 ### 输入流
 #### read()  
-这种方式料率底下，不推荐使用。  
+这种方式效率底下，不推荐使用。  
 ```java
 /* 一次读取一个字节，读到文末返回-1 */
 private viod showContent(String path) throws IOException {
