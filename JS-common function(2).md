@@ -51,12 +51,12 @@ function changeCase(str, type) {
 
   switch (type) {
     case 1:
-      return str.replace(/^(\w)(\w+)/, function(v, v1, v2) {
-        return v1.toUpperCase() + v2.toLowerCase();
+      return str.replace(/\b\w+\b/g, function(word) {
+        return word.substring(0, 1).toUpperCase() + word.substring(1).toLowerCase();
       });
     case 2:
-      return str.replace(/^(\w)(\w+)/, function(v, v1, v2) {
-        return v1.toLowerCase() + v2.toUpperCase();
+      return str.replace(/\b\w+\b/g, function(word) {
+        return word.substring(0, 1).toLowerCase() + word.substring(1).toUpperCase();
       });
     case 3:
       return ToggleCase(str);

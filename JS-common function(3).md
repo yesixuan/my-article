@@ -10,28 +10,81 @@ categories:
 > 整理一下从别处看到的js常用函数[参考](https://segmentfault.com/a/1190000010225928)（dom操作）...
 
 <!-- more -->
+## 基础函数
+### 判断JS数据类型
+```js
+function istype(o, type) {
+  //全部小写
+  var _type = type.toLowerCase();
+  switch (_type) {
+    case 'string':
+      return Object.prototype.toString.call(o) === '[object String]';
+    case 'number':
+      return Object.prototype.toString.call(o) === '[object Number]';
+    case 'boolean':
+      return Object.prototype.toString.call(o) === '[object Boolean]';
+    case 'undefined':
+      return Object.prototype.toString.call(o) === '[object Undefined]';
+    case 'null':
+      return Object.prototype.toString.call(o) === '[object Null]';
+    case 'function':
+      return Object.prototype.toString.call(o) === '[object Function]';
+    case 'array':
+      return Object.prototype.toString.call(o) === '[object Array]';
+    case 'object':
+      return Object.prototype.toString.call(o) === '[object Object]';
+    case 'nan':
+      return isNaN(o);
+    case 'elements':
+      return Object.prototype.toString.call(o).indexOf('HTML') !== -1
+    default:
+      return Object.prototype.toString.call(o)
+  }
+}
+```
 ## 基础DOM操作
 ### 检测对象是否有某个类名
 ```js
-function hasClass(obj,classStr){
-  var arr=obj.className.split(/\s+/);
-  return (arr.indexOf(classStr)==-1)?false:true;
+function hasClass(obj, classStr) {
+  if (obj.className && this.trim(obj.className, 1) !== "") {
+    var arr = obj.className.split(/\s+/); //这个正则表达式是因为class可以有多个,判断是否包含
+    return (arr.indexOf(classStr) == -1) ? false : true;
+  } else {
+    return false;
+  }
 }
 ```
 ### 添加类名
 ```js
 function addClass(obj, classStr) {
-  if (!hasClass(obj, classStr)) {
-    obj.className += " " + classStr
+  if ((this.istype(obj, 'array') || this.istype(obj, 'elements')) && obj.length >= 1) {
+    for (var i = 0, len = obj.length; i < len; i++) {
+      if (!this.hasClass(obj[i], classStr)) {
+        obj[i].className += " " + classStr;
+      }
+    }
+  } else {
+    if (!this.hasClass(obj, classStr)) {
+      obj.className += " " + classStr;
+    }
   }
 }
 ```
 ### 删除类名
 ```js
 function removeClass(obj, classStr) {
-  if (hasClass(obj, classStr)) {
-    var reg = new RegExp('(\\s|^)' + classStr + '(\\s|$)');
-    obj.className = obj.className.replace(reg, '');
+  if ((this.istype(obj, 'array') || this.istype(obj, 'elements')) && obj.length > 1) {
+    for (var i = 0, len = obj.length; i < len; i++) {
+      if (this.hasClass(obj[i], classStr)) {
+        var reg = new RegExp('(\\s|^)' + classStr + '(\\s|$)');
+        obj[i].className = obj[i].className.replace(reg, '');
+      }
+    }
+  } else {
+    if (this.hasClass(obj, classStr)) {
+      var reg = new RegExp('(\\s|^)' + classStr + '(\\s|$)');
+      obj.className = obj.className.replace(reg, '');
+    }
   }
 }
 ```
@@ -118,8 +171,8 @@ function upDigit(n) {
       p = digit[n % 10] + unit[1][j] + p;
       n = Math.floor(n / 10);
     }
-    // s = p.replace(/(零.)*零$/, '').replace(/^$/, '零')+ unit[0][i] + s;
-    s = p + unit[0][i] + s;
+    s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+    //s = p + unit[0][i] + s;
   }
   return head + s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
 }
@@ -157,6 +210,12 @@ function setUrlPrmt(obj) {
     }
   }
   return _rs.join('&');
+}
+```
+### 随机码
+```js
+function randomWord(count) {
+  return Math.random().toString(count).substring(2);
 }
 ```
 ### 随机返回一个范围的数字
