@@ -31,5 +31,16 @@ VScode已经集成Git管理，这一点大赞。开启源代码管理界面，�
 
 
 ## 必备插件
+### 自动生成文档注释`vscode-fileheader`
+1. 安装`vscode-fileheader`插件;
+2. 在用户配置json文件中添加`"fileheader.Author": "yesixuan", "fileheader.LastModifiedBy": "xuan",`;  
+3. 生成文档注释：`ctrl+alt+i`。  
+### vscode-icons
+话不多说，直接上插件`vscode-icons`。
+### Debugger for Chrome
+让vscode映射chrome的debug功能，静态页面都可以用vscode来打断点调试。（这个有待后续研究）
+### VUE插件
+vetur：语法高亮、智能感知、Emmet等；  
+VueHelper：snippet代码片段。  
 
 ## 常用快捷键
