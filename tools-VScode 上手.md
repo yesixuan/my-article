@@ -31,6 +31,8 @@ VScode已经集成Git管理，这一点大赞。开启源代码管理界面，�
 
 
 ## 必备插件
+备注信息：*7359e919392f3be07323db5e9bc0703e7aba7916*
+
 ### 自动生成文档注释`vscode-fileheader`
 1. 安装`vscode-fileheader`插件;
 2. 在用户配置json文件中添加`"fileheader.Author": "yesixuan", "fileheader.LastModifiedBy": "xuan",`;  
@@ -41,7 +43,11 @@ VScode已经集成Git管理，这一点大赞。开启源代码管理界面，�
 让vscode映射chrome的debug功能，静态页面都可以用vscode来打断点调试。（这个有待后续研究）
 ### VUE插件
 vetur：语法高亮、智能感知、Emmet等；  
-VueHelper：snippet代码片段。  
+VueHelper：snippet代码片段。
+### Syncing备份
+Syncing插件用来备份编辑器所有配置数据（包括插件）。  
+上传配置信息：打开控制面板，依次输入**upload**、**token**，Gist ID给个空的让其随机生成即可。  
+下载配置信息：打开控制面板，依次输入**download**、**token**，选择一个Gist ID。
 
 ## 常用快捷键
 - 移动行上下：Alt + up/down
