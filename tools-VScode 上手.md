@@ -34,7 +34,7 @@ VScode已经集成Git管理，这一点大赞。开启源代码管理界面，�
 ### 自动生成文档注释`vscode-fileheader`
 1. 安装`vscode-fileheader`插件;
 2. 在用户配置json文件中添加`"fileheader.Author": "yesixuan", "fileheader.LastModifiedBy": "xuan",`;  
-3. 生成文档注释：`ctrl+alt+i`。  
+3. 生成文档注释：`ctrl+alt+i`。    
 ### vscode-icons
 话不多说，直接上插件`vscode-icons`。
 ### Debugger for Chrome
@@ -44,3 +44,16 @@ vetur：语法高亮、智能感知、Emmet等；
 VueHelper：snippet代码片段。  
 
 ## 常用快捷键
+- 移动行上下：Alt + up/down
+- 删除行：Ctrl + Shift + K
+- 缩进：Ctrl + ] / [ 或 Tab / Shift + Tab
+- 替代鼠标滚轮：Ctrl + Up / Down
+- 整页地翻：Alt + PageUp / PageDown
+- 折叠展开区块代码：Ctrl + Shift + [ / ]
+- 跳转文件：Ctrl + P
+- 切换最近打开：Ctrl + Tab
+- 多选 / 跳选：Ctrl + D / K
+- 从光标处扩展选中全行：Shift + Alt + right
+- 选择所有出现在当前选中的词汇-操作：Ctrl + F2
+- 侧边栏显示隐藏：Ctrl + B
+- 选中行（可以连续选）：Ctrl + I
