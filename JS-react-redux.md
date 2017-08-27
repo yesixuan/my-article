@@ -203,7 +203,7 @@ export const USERINFO_UPDATE = "USERINFO_UPDATE"; // 后面还有许多
   export default function userinfo(state={},action){
   	switch(action.type) {
   		case userTypes.USERINFO_UPDATE:
-  				return action.data;
+  			return action.data;
   		default:
   			return state;
   	}
@@ -251,3 +251,121 @@ export const USERINFO_UPDATE = "USERINFO_UPDATE"; // 后面还有许多
   	mapDispatchToProps
   )(AppContainer)
 ```
+
+### redux亲手填坑
+
+#### redux相关目录
+|redux  
+----|constants  
+--------|module1.js（action名常量）  
+--------|...  
+----|actions  
+--------|module1.js（生成action对象的工厂函数）  
+--------|...  
+----|reducers  
+--------|module1.js  
+--------|...  
+--------|index.js（合并各个reducer）  
+----|index.js（创建store，传入reducer）
+ 
+#### constants
+```js
+  // 定义action的名字(module1.js)
+  export const ADD = "ADD";
+```
+
+#### actions
+```js
+  import * as module1Types from '../constants/module1.js'
+  export function add(data){
+    return {
+      type:module1Types.ADD,
+      data
+    }
+  }
+```
+
+#### reducers
+```js
+  /* module1.js */
+  import * as module1Types from '../constants/module1.js'
+  // 建议在每个reducer中传入这个模块相对应的那部分state，state的拆分对应reducer的拆分
+  export default function app(state=25, action){
+    switch(action.type) {
+      case module1Types.ADD:
+        return state + 1;
+      default:
+        return state;
+    }
+  }
+```
+
+```js
+  /* index.js */
+  import {combineReducers} from 'redux'
+  import module1 from './module1.js'
+  export default combineReducers({
+    // 这里实际上是将全局的state的module1部分交给名字叫module1的reducer来处理
+    module1
+  })
+```
+
+#### 最外层定义store的index.js
+```js
+  import { createStore } from 'redux'
+  import rootReducer from './reducers'
+  // 如果初始化的state已经在reducer时被传入，那么这里的initialState是没必要传入的
+  export default function store(initialState){
+    const store = createStore(rootReducer,initialState,
+      // 这里用来开启浏览器redux的debugger模式的
+      window.devToolsExtension ? window.devToolsExtension() : undefined
+    )
+    return store
+  }
+```
+
+#### 在react上注册store
+```js
+import { Provider } from 'react-redux';
+import createStore from './store';
+// 调用最外层定义store的index.js定义的方法生成store
+const store = createStore();
+// ...
+<Provider store={store}>
+  <div className="container">
+    ...
+  </div>
+</Provider>
+```
+
+#### 在组件中与store交互
+```js
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+// 这里引入的action将来要映射到该组件的props上
+import * as module1Actions from '../store/actions/module1.js'
+/* 组件类start */
+// ...
+<h3>{this.props.count}</h3>
+<button onClick={this.clickHandle.bind(this)}>点我</button>
+// ...
+clickHandle() {
+  this.props.module1ActionList.add({"hehe": 0}); // 这里传入的数据没意义，只是说明通过这种方式传参
+}
+/* 组件类end */
+function mapStateToProps(state) {
+	return {
+		count: state.module1
+	}
+}
+function mapDispatchToProps(dispatch) {
+	return {
+		module1ActionList: bindActionCreators(module1Actions,dispatch)
+	}
+}
+export default connect(
+	mapStateToProps,
+	mapDispatchToProps
+)(Hehe)
+```
+
