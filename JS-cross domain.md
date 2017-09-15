@@ -19,15 +19,15 @@ JSONP跨域的的原理是利用script标签的src属性请求资源不受同源
 浏览器端端：
 ```html
 <script>
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    // 传参并指定回调执行函数为cbName
-    script.src = 'http://www.domain2.com:8080/login?user=admin&callback=cbName';
-    document.head.appendChild(script);
-    // 回调执行函数
-    function cbName(res) {
-      alert(JSON.stringify(res));
-    }
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  // 传参并指定回调执行函数为cbName
+  script.src = 'http://www.domain2.com:8080/login?user=admin&callback=cbName';
+  document.head.appendChild(script);
+  // 回调执行函数
+  function cbName(res) {
+    alert(JSON.stringify(res));
+  }
  </script>
 ```
 node服务器端：
