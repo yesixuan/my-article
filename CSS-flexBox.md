@@ -58,8 +58,8 @@ align-items属性定义项目在交叉轴上如何对齐。
   }
 ```
 [](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgIIkHnLoWhXmV1l2AWJIAgo81t5mGAbicyg8ibRVRso6j8PDjCD91L3yQ/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
-#### align-content属性(没搞太明白)
-align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。
+#### align-content属性
+align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用。（子项目占据超过一行）
 ```CSS
   .box {
     align-content: flex-start | flex-end | center | space-between | space-around | stretch;
@@ -106,3 +106,30 @@ align-self属性允许单个项目有与其他项目不一样的对齐方式，�
   }
 ```
 ![align-self属性](http://mmbiz.qpic.cn/mmbiz/zPh0erYjkib0PY55r4g0ADOFbKwLHgbrgibEKHCULaFNxmos63ichpsdCnavoCr49h1qIk7clz22Ev7TjFE5syib6g/640?wx_fmt=jpeg&wxfrom=5&wx_lazy=1)
+
+### 最佳实践
+1. 声明flex容器；  
+2. 将项目排列方向与是否折行这两个属性合并到`flex-flow`中写；  
+3. 定义所有子项目在容器中的横向排布以及纵向排布（只有项目超过一行，声明纵向布局才有意义）；  
+4. 通过定义`align-items`属性来声明每个项目在各自所属的那行空间的纵向排布；  
+5. 定义项目的`flex`属性来确定项目在空间多余、空间缺乏和自身的原始宽度；  
+6. 定义`align-self`属性，其功效类似容器中的`align-items`属性。只不过前者作用于所有项目，后者针对当前子项目（如果需要某个子项的行为与与其一行的兄弟不同的话）。  
+
+```css
+.container{
+  display: flex;
+  /* 方向可选值：row(默认) | column-reverse | column | row | row-reverse */
+  flex-flow: row no-wrap;
+  /* 可选值为：flex-start(默认) | flex-end | center | space-between | space-around */
+  justify-content: space-around;
+  align-content: space-around;
+  /* 可选值为：flex-start(默认) | flex-end | center | baseline | stretch */
+  align-items: flex-start;
+}
+.item{
+  /* 扩展默认值为0（不扩展），收缩默认值为1（收缩），宽度默认值为auto */
+  flex: 1 0 20%;
+  align-self: auto | flex-start | flex-end | center | baseline | stretch;
+}
+```
+
