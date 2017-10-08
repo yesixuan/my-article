@@ -1,6 +1,6 @@
 ---
 title: CSS长度描述
-tags: ["css3"]
+tags: ["css"]
 date: 2017-05-15 09:59:00
 categories:
 - 前端
