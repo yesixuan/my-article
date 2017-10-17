@@ -59,9 +59,10 @@ function* watchFetchData() {
 call 同样支持调用对象方法，你可以使用以下形式，为调用的函数提供一个 this 上下文：  
 ```js
 yield call([obj, obj.method], arg1, arg2, ...) // 如同 obj.method(arg1, arg2 ...)
-```  
+```   
+
 #### apply
-apply 提供了另外一种调用的方式：  
+apply 提供了另外一种调用的方式：    
 ```js
 yield apply(obj, obj.method, [arg1, arg2, ...])
 ```
