@@ -79,6 +79,7 @@ function loadImg(el) {
 1. 获取第一次触发事件的时间戳;
 2. 获取第二次触发事件的时间戳;
 3. 时间差如果大于某个阈值就执行事件，然后重置第一个时间。  
+
 ```js
 function throttle(fn, mustRun = 500) {
   const timer = null;

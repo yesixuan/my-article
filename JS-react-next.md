@@ -38,10 +38,12 @@ npm install --save next react react-dom
   }
 }
 ```  
+
 在项目中增加两个文件夹：pages、static。  
 pages文件夹中的组件路径映射到URL对应目录上，static文件夹存放静态资源。  
 
 ## 页面之间的导航
+
 ### Link组件
 我们可以通过nextjs提供的Link组件进行页面之间的跳转。  
 ```js
@@ -141,11 +143,11 @@ export default (props) => (
     </Layout>
 )
 ```
-此时，在浏览器地址栏中输入：http://localhost:3000/post?title=Hello%20Next.js 就可以看到效果了。  
+此时，在浏览器地址栏中输入： "http://localhost:3000/post?title=Hello%20Next.js"  就可以看到效果了。  
 
 ## 路由掩码
 路由掩码的作用实际上就是将真实丑陋的URL地址掩盖起来，呈现给用户一个清爽的URL。  
-就像上节的栗子：我们的真实URL地址是“http://localhost:3000/post?title=Hello%20Next.js”，但是我们希望呈递给用户的URL是“http://localhost:3000/p/hello-nextjs”
+就像上节的栗子：我们的真实URL地址是 "http://localhost:3000/post?title=Hello%20Next.js" ，但是我们希望呈递给用户的URL是    "http://localhost:3000/p/hello-nextjs" 。
 
 ### Link的as属性
 ```js
@@ -158,7 +160,7 @@ const PostLink = (props) => (
   </li>
 )
 ```
-整完之后，浏览器中的前进后退都是可以实现的，但是如果在“http://localhost:3000/p/hello-nextjs”时，直接刷新页面就会报页面404。接下来我们来看看如何通过nodejs修复这个bug。
+整完之后，浏览器中的前进后退都是可以实现的，但是如果在 "http://localhost:3000/p/hello-nextjs" 时，直接刷新页面就会报页面404。接下来我们来看看如何通过nodejs修复这个bug。
 
 ### 服务器端配合
 安装express  
@@ -285,7 +287,7 @@ export default Post
 将nextjs项目部署到服务器上需要解决两个问题：①、项目的启动要随之操作系统的启动而启动；②、将80端口代理到nextjs开启的端口上。  
 
 ### 使用PM2来管理我们的Next.js进程
-1. 启动next.js进程  
+1. 启动next.js进程    
 ```bash
 # 自定义Express服务器
 # https://github.com/zeit/next.js/tree/master/examples/custom-server-express

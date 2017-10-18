@@ -88,10 +88,10 @@ categories:
 	display: grid;
 	grid-template-columns: 100px 100px 100px 100px 100px;
 	grid-template-rows: 100px 100px 100px 100px;
-	grid-template-areas: 'title  title  title  title  aside'
-									 		 'nav    main   main   main   aside'
-									 		 'nav    main   main   main   aside'
-									 		 'footer footer footer footer footer';
+	grid-template-areas:  'title  title  title  title  aside'
+												'nav    main   main   main   aside'
+												'nav    main   main   main   aside'
+												'footer footer footer footer footer';
 
 /* 子项中 */
 .item1 {

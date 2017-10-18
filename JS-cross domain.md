@@ -129,7 +129,7 @@ iframeWin.postMessage('hello world!', "*");
 ### nginx反向代理接口跨域
 通过nginx配置一个代理服务器（域名与domain1相同，端口不同）做跳板机，反向代理访问domain2接口，并且可以顺便修改cookie中domain信息，方便当前域cookie写入，实现跨域登录。  
 #### nginx配置
-```
+```bash
 server {
   listen       81; # 主机名不同
   server_name  www.domain1.com; # 域名相同

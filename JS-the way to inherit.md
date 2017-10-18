@@ -10,7 +10,7 @@ categories:
 
 <!-- more -->
 ## 原型链继承
-原型链继承基本思想就是让一个原型对象指向另一个类型的实。
+原型链继承基本思想就是让一个原型对象指向另一个类型的实例。  
 ```js
 // 父类构造函数
 function SuperType() {
@@ -41,7 +41,8 @@ console.log(instance.getSuperValue()) // true
 
 ## 构造函数继承
 此方法为了解决原型中包含引用类型值所带来的问题。  
-这种方法的思想就是在子类构造函数的内部调用父类构造函数，可以借助apply()和call()方法来改变对象的执行上下文。    
+这种方法的思想就是在子类构造函数的内部调用父类构造函数，可以借助apply()和call()方法来改变对象的执行上下文。  
+  
 ```js
 function SuperType() {
   this.colors = ['red', 'blue', 'green']

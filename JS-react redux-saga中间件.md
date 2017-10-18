@@ -57,12 +57,14 @@ function* watchFetchData() {
 #### call
 为什么我们使用call声明式地调用一个函数而不是用“函数()”的方式？这是为了方便我们做断言测试。  
 call 同样支持调用对象方法，你可以使用以下形式，为调用的函数提供一个 this 上下文：  
+
 ```js
 yield call([obj, obj.method], arg1, arg2, ...) // 如同 obj.method(arg1, arg2 ...)
 ```   
 
 #### apply
-apply 提供了另外一种调用的方式：    
+apply 提供了另外一种调用的方式：  
+
 ```js
 yield apply(obj, obj.method, [arg1, arg2, ...])
 ```

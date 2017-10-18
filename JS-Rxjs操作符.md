@@ -260,7 +260,7 @@ Rx.Observable.of( ...items )
 
 ```js
 length$.withLatestFrom(width$)
-	.subscribe(v => console.log(v))
+  .subscribe(v => console.log(v))
 ```
 
 ### zip
