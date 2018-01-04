@@ -17,6 +17,7 @@ categories:
 
 ## 模块是什么
 不同于redux中的模块，vuex中的模块相当于是一个小的store，包含state、mutations、actions、getters。  
+
 ```js
 const moduleA = {
   state: { ... },
@@ -43,7 +44,8 @@ store.state.b // -> moduleB 的状态
 ```
 
 ## 模块的局部状态
-### 模块内的mutations
+### 模块内的mutations  
+
 ```js
 const moduleA = {
   mutations: {
@@ -55,7 +57,8 @@ const moduleA = {
 }
 ```
 
-### 模块内的getters
+### 模块内的getters  
+
 ```js
 getters: {
   // 接收到的第一个参数是模块局部的state
@@ -73,8 +76,9 @@ getters: {
 }
 ```  
 
-### 模块内的actions  
+### 模块内的actions    
 对于模块内部的 action，局部状态通过 context.state 暴露出来，根节点状态则为 context.rootState.  
+
 ```js
 actions: {
   // 将state, commit, rootState解构出来
@@ -92,6 +96,7 @@ actions: {
 
 ### 给予模块各自不同的命名空间  
 你可以通过添加 namespaced: true 的方式使其成为命名空间模块。当模块被注册后，它的所有 getter、action 及 mutation 都会自动根据模块注册的路径调整命名。  
+
 ```js
 const store = new Vuex.Store({
   modules: {
@@ -107,6 +112,7 @@ const store = new Vuex.Store({
 ### 在命名空间模块内访问全局内容
 如果你希望使用全局 state 和 getter，rootState 和 rootGetter 会作为第三和第四参数传入 getter，也会通过 context 对象的属性传入 action。  
 - getters  
+
 ```js
 getters: {
   // 在这个模块的 getter 中，`getters` 被局部化了
@@ -120,6 +126,7 @@ getters: {
 ```  
 
 - actions  
+
 ```js
 actions: {
   // 在这个模块中， dispatch 和 commit 也被局部化了
@@ -140,6 +147,7 @@ actions: {
 
 ### 组件内使用绑定函数  
 当使用 mapState, mapGetters, mapActions 和 mapMutations 这些函数来绑定命名空间模块时，写起来可能比较繁琐：  
+
 ```js
 /* 原始写法 */
 computed: {
@@ -156,7 +164,8 @@ methods: {
 }
 ```  
 
-对于这种情况，你可以将模块的空间名称字符串作为第一个参数传递给上述函数，这样所有绑定都会自动将该模块作为上下文。于是上面的例子可以简化为：  
+对于这种情况，你可以将模块的空间名称字符串作为第一个参数传递给上述函数，这样所有绑定都会自动将该模块作为上下文。于是上面的例子可以简化为：   
+
 ```js
 /* 推荐写法 */
 computed: {
@@ -173,7 +182,8 @@ methods: {
 }
 ```  
 
-还可以更精简一点：
+还可以更精简一点： 
+
 ```js
 /* 鼎力推荐 */
 import { createNamespacedHelpers } from 'vuex'
