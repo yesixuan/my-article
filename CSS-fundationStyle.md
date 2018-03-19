@@ -11,7 +11,7 @@ categories:
 
 <!-- more -->
 ### 前言
-国内以为大神通读Normalize.css源码，并且将Normalize.css进行了更细粒度的划分放入[Koala](https://github.com/Alsiso/Koala)这个项目中。非常符合我的心意。感谢@Alsiso。[原文地址](http://segmentfault.com/a/1190000003055238)
+国内一位大神通读Normalize.css源码，并且将Normalize.css进行了更细粒度的划分放入[Koala](https://github.com/Alsiso/Koala)这个项目中。非常符合我的心意。感谢@Alsiso。[原文地址](http://segmentfault.com/a/1190000003055238)
 ### 样式重置方案`normal.css`
 Normalize.css不仅统一了样式，还保留元素的可辨识性，这是我们应该继承和发扬的优点，normal.css也会参考借鉴Normalize.css所有优势，不过Normalize.css更简洁，让开发者更容易上手，并且对它进行瘦身，比如移除一些不会用到的元素标签hgroup，将一些元素进行分模块管理，比如html5.css，form.css等，方便按需求灵活引用。
 #### 调整内容

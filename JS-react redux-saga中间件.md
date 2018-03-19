@@ -4,7 +4,7 @@ tags: ["js","redux"]
 date: 2017-07-29 20:41:00
 categories:
 - 前端
-- redux
+- react
 ---
 > 记得某一天，第一次看到有人说到redux-saga。他说：用了redux-saga之后就再也回不去redux-thunk了...
 

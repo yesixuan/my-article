@@ -1,5 +1,5 @@
 ---
-title: JS常用方法（三）
+title: JS常用方法（四）
 tags: ["js","常用方法"]
 date: 2017-08-22 09:59:00
 categories:
