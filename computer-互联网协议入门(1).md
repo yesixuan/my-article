@@ -1,5 +1,5 @@
 ---
-title: 互联网协议入门
+title: 互联网协议入门（一）
 tags: ["协议"]
 date: 2018-04-02 13:04:00
 categories:
@@ -111,3 +111,6 @@ UDP协议的优点是比较简单，容易实现，但是缺点是可靠性较�
 **"应用层"的作用，就是规定应用程序的数据格式。**  
 这是最高的一层，直接面对用户。它的数据就放在TCP数据包的"数据"部分。因此，现在的以太网的数据包就变成下面这样。  
 ![完整数据包](http://www.ruanyifeng.com/blogimg/asset/201205/bg2012052913.png)
+
+参考文章：  
+[互联网协议入门（一）](http://www.ruanyifeng.com/blog/2012/05/internet_protocol_suite_part_i.html)
